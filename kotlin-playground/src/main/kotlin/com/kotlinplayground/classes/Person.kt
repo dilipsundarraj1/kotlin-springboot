@@ -36,6 +36,7 @@ fun main() {
 
     val person = Person("Alex", 25) // new keyword is not needed
     person.action()
+    println("Name : ${person.name} and the age is : ${person.age}")
     println("Length Of the name : ${person.nameLength}")
 
     val person1 = Person() // new keyword is not needed
