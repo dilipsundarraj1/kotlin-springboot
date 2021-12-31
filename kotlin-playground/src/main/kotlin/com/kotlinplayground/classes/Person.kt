@@ -16,8 +16,10 @@ class Person(
     }
 
     constructor(
-        _email: String
-    ) : this() {
+        _email: String,
+        _name: String = "",
+        _age: Int = 0
+    ) : this(_name, _age) {
         email = _email
     }
 
@@ -42,7 +44,7 @@ fun main() {
     val person1 = Person() // new keyword is not needed
     //person1.action()
 
-    val person2 = Person(_email = "abc@gmail.com") // new keyword is not needed
+    val person2 = Person(_email = "abc@gmail.com", "Alex", 25) // new keyword is not needed
     person1.action()
     println("Email is : ${person2.email}")
 
