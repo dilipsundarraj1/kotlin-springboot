@@ -3,11 +3,14 @@ package com.kotlinplayground.classes
 class Item() {
     var name: String = ""
     var price: Double = 0.0
-        get() = field
+        get() {
+            println("Inside Getter")
+            return field
+        }
         set(value) {
-            if(value >= 0.0){
+            if (value >= 0.0) {
                 field = value
-            }else{
+            } else {
                 throw IllegalArgumentException("Negative Price is not Allowed!")
             }
         }
@@ -21,5 +24,6 @@ fun main() {
     val item = Item("Iphone")
     println("Item name is ${item.name}")
     item.price = 1.0
+    println(item.price)
 
 }

@@ -6,13 +6,6 @@ object Authenticate {
     }
 }
 
-class TokenValidator{
-
-    fun validteToken(token: String){
-        println("Token Validated")
-    }
-}
-
 fun main() {
     Authenticate.authenticate("Dilip", "abc")
 }

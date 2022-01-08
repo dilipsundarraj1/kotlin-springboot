@@ -3,7 +3,7 @@ package com.kotlinplayground.classes
 
 open class User(
     val name: String,
-   open val age: Int = 0
+   val age: Int = 0
 ) {
     open val isLoggedIn : Boolean = true
     open fun login() {
@@ -18,7 +18,7 @@ open class User(
 
 class Student(
     name: String,
-   override val age: Int = 0
+    age: Int = 0
 ) : User(name, age) {
 
     override var isLoggedIn : Boolean = false
@@ -54,6 +54,10 @@ fun main() {
 
     val student = Student("Dilip")
     student.login()
+
+    val instructor = Instructor("Dilip")
+    instructor.login()
+
     Student.country()
     println("noOfEnrolledCourses:  ${Student.noOfEnrolledCourses}")
     Student.country()
