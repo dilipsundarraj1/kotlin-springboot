@@ -37,7 +37,7 @@ class Student(
         isLoggedIn = true
     }
 
-    fun logOut() {
+    override fun logout() {
         super.logout()
         println("Inside Student logout")
         isLoggedIn = false
@@ -63,9 +63,7 @@ fun main() {
     Student.country()
 
     val user = User("Dilip")
-
-
-
+    //user.
 
     /*val instructor = Instructor("Dilip")
     instructor.login()*/

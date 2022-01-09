@@ -24,4 +24,8 @@ fun main() {
         id=2
     )
     println("Course 2 : $course2")
+
+    val  marketingCourse = Course(1, "FaceBook Marketing", "Dilip", CourseCategory.MARKETING)
+    println("marketingCourse : $marketingCourse")
+
 }

@@ -14,7 +14,12 @@ interface CourseRepository {
     }
 }
 
- class SqlCourseRepository : CourseRepository {
+interface Repository {
+
+    fun getAll() : Any
+}
+
+ class SqlCourseRepository : CourseRepository, Repository {
 
     override var isCoursePersisted: Boolean = false
         get() {
@@ -36,7 +41,11 @@ interface CourseRepository {
         return course.id
     }
 
-}
+     override fun getAll(): Any {
+         TODO("Not yet implemented")
+     }
+
+ }
 
 class NoSqlCourseRepository : CourseRepository {
     override fun getById(id: Int): Course {
