@@ -12,7 +12,7 @@ fun checkType(type: Any) {
         }
         is String -> {
             println("The type is Course ")
-            println(type.uppercase())
+            println(type.lowercase())
         }
     }
 }
@@ -31,7 +31,7 @@ fun main() {
     val course = Course(
         1,
         "Reactive Programming in Modern Java using Project Reactor",
-        "Dilip"
+        "DILIP"
     )
 
     checkType(course)

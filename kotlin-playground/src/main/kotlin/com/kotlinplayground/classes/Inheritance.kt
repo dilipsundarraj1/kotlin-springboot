@@ -10,6 +10,10 @@ open class User(
         println("Inside user login")
     }
 
+    private fun secret(){
+
+    }
+
    protected open fun logout(){
         println("Inside user logout")
 
@@ -29,6 +33,10 @@ class Student(
         fun country(): String {
             return "USA"
         }
+    }
+
+    fun secret(){
+
     }
 
     override fun login() {
@@ -63,6 +71,7 @@ fun main() {
     Student.country()
 
     val user = User("Dilip")
+
     //user.
 
     /*val instructor = Instructor("Dilip")

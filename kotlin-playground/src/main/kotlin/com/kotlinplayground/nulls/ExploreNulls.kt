@@ -16,7 +16,7 @@ fun main() {
     println(length)
 
     nameNullable = "alex"
-    val length1 = nameNullable?.length?.toLong()
+    val length1 = nameNullable.length.toLong()
     println("Length of the name is : $length1")
 
     val nameNonNull: String = "Dilip"
