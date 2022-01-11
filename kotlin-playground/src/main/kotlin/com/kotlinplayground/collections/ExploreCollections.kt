@@ -13,11 +13,11 @@ fun main() {
     println("namesMutableList : $namesMutableList")
 
 
-    val nameAgeMap = hashMapOf("dilip" to 33, "scooby" to 4)
+    val nameAgeMap = mapOf("dilip" to 33, "scooby" to 4)
     println("nameAgeMap : $nameAgeMap")
 
     val nameAgeMutableMap = mutableMapOf("dilip" to 33, "scooby" to 4)
-    nameAgeMutableMap.put("abc", 100)
+    nameAgeMutableMap["abc"] = 100
     println("nameAgeMutableMap : $nameAgeMutableMap")
 
     val set = setOf("adam", "ben", "chloe")
