@@ -14,8 +14,10 @@ curl -i \
 -X POST http://localhost:8080/v1/courses
 
 
+CREATE COURSE WITH INSTRUCTOR ID:
+===================================
 curl -i \
--d '{"id":null, "name":"Build Reactive Microservices using Spring WebFlux/SpringBoot ", "category": "Development"}' \
+-d '{"id":null, "name":"Build Reactive Microservices using Spring WebFlux/SpringBoot ", "category": "Development", "instructorId": 1}' \
 -H "Content-Type: application/json" \
 -X POST http://localhost:8080/v1/courses
 
@@ -29,6 +31,14 @@ curl -i \
 -d '{"id":null, "name":"Build Restful APIs using Kotlin & SpringBoot2", "category": "Development"}' \
 -H "Content-Type: application/json" \
 -X PUT http://localhost:8080/v1/courses/1
+
+
+UPDATE COURSE WITH INSTRUCTOR ID:
+================================
+curl -i \
+-d '{"id":null, "name":"Build Restful APIs using Kotlin & SpringBoot2", "category": "Development"}' \
+-H "Content-Type: application/json" \
+-X PUT http://localhost:8080/v1/courses/2
 
 
 DELETE COURSE:
