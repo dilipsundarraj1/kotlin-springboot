@@ -24,7 +24,7 @@ import java.util.stream.Stream
 @DataJpaTest
 @ActiveProfiles("test")
 @AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
-class CourseRepositoryIntgTest : PostgreSQLContainerInitializer{
+class CourseRepositoryIntgTest : PostgreSQLContainerInitializer(){
 
     @Autowired
     lateinit var courseRepository: CourseRepository
@@ -96,7 +96,7 @@ class CourseRepositoryIntgTest : PostgreSQLContainerInitializer{
 }
 
 @Testcontainers
-interface PostgreSQLContainerInitializer {
+open class PostgreSQLContainerInitializer {
     companion object {
         @Container
         private val postgresDB: PostgreSQLContainer<*> = PostgreSQLContainer("postgres:13.2")
