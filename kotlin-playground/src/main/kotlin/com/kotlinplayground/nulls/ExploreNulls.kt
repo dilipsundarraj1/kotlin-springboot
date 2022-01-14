@@ -5,11 +5,23 @@ data class Movie(
     val name: String
 )
 
+fun printName(name: String) {
+    println("Name is : $name")
+}
+
+fun printName1(name: String?) {
+    println("Name is : $name")
+}
+
 
 fun main() {
 
     var nameNullable: String? = null
     println(nameNullable?.length) // ? is the safeCall Operator
+    nameNullable = "Alex"
+    nameNullable?.run {
+        printName(nameNullable!!)
+    }
 
 
     val length = nameNullable?.length ?: 0 // ?: is the elvis Operator
@@ -23,6 +35,7 @@ fun main() {
     //val nameNonNull = "Dilip"
 
     println(nameNonNull)
+    printName1(nameNonNull)
 
     val movie = saveMovie(Movie(null, "Avengers"))
     println(movie.id!!)
