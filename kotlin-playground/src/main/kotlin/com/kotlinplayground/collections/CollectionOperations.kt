@@ -79,7 +79,19 @@ fun main() {
 
     exploreHashMap()
 }
+private fun collections_nullability() {
+    val list: List<String>? = null /*?: listOf()*/
 
+    list?.forEach {
+
+    }
+    val list1: List<String?> = listOf("alex", null, "adam")
+
+    list1
+        .forEach {
+            println(it?.length)
+        }
+}
 private fun exploreMap(
     courseList: MutableList<Course>,
     desPredicate: (Course) -> Boolean
@@ -110,9 +122,9 @@ private fun exploreFilter(
 
 private fun exploreFlatMap(developmentCourses: List<Course>, topic: String): List<String> {
     val kafkaCourses = developmentCourses
-        .flatMap {
-            val courseName = it.name
-            it.topicsCovered.filter {
+        .flatMap { course ->
+            val courseName = course.name
+            course.topicsCovered.filter {
                 it == topic
             }.map {
                 courseName
