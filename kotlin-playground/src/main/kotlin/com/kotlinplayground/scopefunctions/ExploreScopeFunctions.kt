@@ -28,11 +28,11 @@ fun exploreRun() {
 }
 
 fun exploreWith() {
-    val numbers = mutableListOf<Int>(1, 2, 3, 4, 5)
+    val numbers = mutableListOf(1, 2, 3, 4, 5)
 
     val result = with(numbers) {
         println("Size is ${numbers.size}")
-        numbers.plus(6)
+        val list = numbers.plus(6)
         numbers.sum()
     }
     println("With result is : $result")
@@ -40,7 +40,7 @@ fun exploreWith() {
 }
 
 fun exploreLet() {
-    val numbers = mutableListOf<Int>(1, 2, 3, 4, 5)
+    val numbers = mutableListOf(1, 2, 3, 4, 5)
     val result = numbers.map { it * 2 }.filter { it > 5 }.let {
         println(it)
         it.sum()
