@@ -1,6 +1,6 @@
 Greeting Controller:
 ====================
-curl -i http://localhost:8080/v1/greeting/dilip
+curl -i http://localhost:8080/v1/greetings/dilip
 
 ===================
 Course Controller: |
