@@ -22,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
+import org.testcontainers.utility.DockerImageName
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -33,10 +34,11 @@ internal class CourseControllerIntgTest {
     companion object {
 
         @Container
-        private val postgresDB: PostgreSQLContainer<*> = PostgreSQLContainer("postgres:13.2")
-            .withDatabaseName("testdb")
-            .withUsername("postgres")
-            .withPassword("secret")
+        val postgresDB = PostgreSQLContainer<Nothing>(DockerImageName.parse("postgres:13-alpine")).apply {
+            withDatabaseName("testdb")
+            withUsername("postgres")
+            withPassword("secret")
+        }
 
         @JvmStatic
         @DynamicPropertySource
