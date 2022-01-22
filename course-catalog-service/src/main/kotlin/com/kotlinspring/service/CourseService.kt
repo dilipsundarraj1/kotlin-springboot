@@ -56,7 +56,7 @@ val instructorService: InstructorService) {
                     it.category = courseDTO.category
                     it.name = courseDTO.name
                     courseRepository.save(it)
-                  //  CourseDTO(it.id, it.name, it.category)
+                    //  CourseDTO(it.id, it.name, it.category)
                     CourseDTO(it.id, it.name, it.category, it.instructor?.id)
                 }
         } else {
