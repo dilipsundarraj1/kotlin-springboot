@@ -7,7 +7,7 @@ This project holds the course code for kotlin and spring
 
 ## Configuring Postgres
 
-### Spin up Postgres DB
+### 1. Spin up Postgres DB
 
 #### Using Docker compose
 
@@ -38,13 +38,13 @@ createdb -p 5432 -h localhost -e courses
 
 
 
-### build.gradle.kts - Add the postgres Dependency
+### 2. build.gradle.kts - Add the postgres Dependency
 
 ```
 runtimeOnly("org.postgresql:postgresql")
 ```
 
-### Autoconfigure the Postgrs DB in application.yml
+### 3. Autoconfigure the Postgrs DB in application.yml
 
 ```
 datasource:
@@ -56,7 +56,7 @@ datasource:
 
 ### Integration Test using TestContainers
 
-#### build.gradle.kts - Add the below changes
+#### 1. build.gradle.kts - Add the below changes
 
 ```
 
@@ -77,7 +77,7 @@ dependencies {
 
 ```
 
-#### Configure TestContainers in Integration Test
+#### 2.1 Configure TestContainers in Integration Test
 
 - Add the below annotation to the test class
 
@@ -106,7 +106,7 @@ companion object {
 }
 ```
 
-#### Configure TestContainers in @DataJPATest
+#### 2.2 Configure TestContainers in @DataJPATest
 
 - Create the **PostgreSQLContainerInitializer** class
 
@@ -141,6 +141,6 @@ open class PostgreSQLContainerInitializer {
 
 ```
 class CourseRepositoryIntgTest : PostgreSQLContainerInitializer(){
-  
+
 }
 ```
