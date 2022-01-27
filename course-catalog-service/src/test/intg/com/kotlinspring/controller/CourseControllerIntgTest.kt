@@ -40,10 +40,7 @@ internal class CourseControllerIntgTest {
         instructorRepository.save(instructor)
 
         val courses = courseEntityList(instructor)
-        courses.forEach {
-            courseRepository.save(it)
-        }
-
+        courseRepository.saveAll(courses)
     }
 
     @Test
