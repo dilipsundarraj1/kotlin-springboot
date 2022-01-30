@@ -45,3 +45,11 @@ curl -i \
 -d '{"id":null, "name":"Dilip Sundarraj"}' \
 -H "Content-Type: application/json" \
 -X POST http://localhost:8080/v1/instructors
+
+
+CREATE COURSE WITH INSTRUCTOR:
+==================
+curl -i \
+-d '{"id":null, "name":"Build Restful APIs using Kotlin and SpringBoot", "category": "Development", "instructorId": 1}' \
+-H "Content-Type: application/json" \
+-X POST http://localhost:8080/v1/courses

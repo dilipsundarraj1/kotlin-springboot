@@ -13,6 +13,7 @@ class InstructorController(val instructorService: InstructorService) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun createInstructor(@RequestBody instructorDTO: InstructorDTO): InstructorDTO = instructorService.addNewInstructor(instructorDTO)
+    fun createInstructor(@RequestBody instructorDTO: InstructorDTO): InstructorDTO
+    = instructorService.addNewInstructor(instructorDTO)
 
 }

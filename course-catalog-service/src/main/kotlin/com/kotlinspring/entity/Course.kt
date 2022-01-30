@@ -18,4 +18,9 @@ data class Course(
     )
     @JoinColumn(name = "INSTRUCTOR_ID", nullable = false)
     val instructor: Instructor? = null
-)
+){
+
+    override fun toString(): String {
+        return "Course(${this.id} , ${this.name} , ${this.category} , ${this.instructor?.id}) "
+    }
+}
