@@ -21,6 +21,6 @@ data class Course(
 ){
 
     override fun toString(): String {
-        return "Course(${this.id} , ${this.name} , ${this.category} , ${this.instructor?.id}) "
+        return "Course(id=$id, name='$name', category='$category', instructor=${instructor!!.id})"
     }
 }
