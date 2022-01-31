@@ -5,13 +5,24 @@ data class Course(
     val name: String,
     val author: String,
     var courseCategory: CourseCategory = CourseCategory.DEVELOPEMENT
-)
+){
+
+    @JvmField
+    var noOfCourses = 10
+}
 
 enum class CourseCategory{
     DEVELOPEMENT,
     BUSINESS,
     DESIGN,
     MARKETING
+}
+
+
+@JvmName("printName1")
+@JvmOverloads
+fun printName(name : String = "default"){
+    println("name : $name")
 }
 
 fun main() {
