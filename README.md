@@ -1,4 +1,4 @@
-# kotlin-spring
+# kotlin-ispring
 This project holds the course code for kotlin and spring
 
 ## H2 Database
@@ -113,21 +113,24 @@ companion object {
 ```
 @Testcontainers
 open class PostgreSQLContainerInitializer {
-    companion object {
-        @Container
-        private val postgresDB: PostgreSQLContainer<*> = PostgreSQLContainer("postgres:13.2")
-            .withDatabaseName("testdb")
-            .withUsername("postgres")
-            .withPassword("secret")
+  companion object {
 
-        @JvmStatic
-        @DynamicPropertySource
-        fun properties(registry: DynamicPropertyRegistry) {
-            registry.add("spring.datasource.url", postgresDB::getJdbcUrl)
-            registry.add("spring.datasource.username", postgresDB::getUsername)
-            registry.add("spring.datasource.password", postgresDB::getPassword)
-        }
-    }
+  @Container
+  val postgresDB = PostgreSQLContainer<Nothing>(DockerImageName.parse("postgres:13-alpine")).apply {
+      withDatabaseName("testdb")
+      withUsername("postgres")
+      withPassword("secret")
+  }
+
+  @JvmStatic
+  @DynamicPropertySource
+  fun properties(registry: DynamicPropertyRegistry) {
+      registry.add("spring.datasource.url", postgresDB::getJdbcUrl)
+      registry.add("spring.datasource.username", postgresDB::getUsername)
+      registry.add("spring.datasource.password", postgresDB::getPassword)
+  }
+}
+
 }
 ```
 
