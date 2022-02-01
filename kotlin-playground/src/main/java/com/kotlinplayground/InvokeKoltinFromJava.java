@@ -12,12 +12,13 @@ public class InvokeKoltinFromJava {
                 Course(1,
                 "Reactive Programming in Modern Java using Project Reactor",
                 "Dilip"
-        , CourseCategory.DEVELOPEMENT
+       // , CourseCategory.DEVELOPEMENT
                 );
 
         CourseKt.printName1("dilip");
 
         course.noOfCourses= 10;
+        Course.printSomething();
     }
 }
 
