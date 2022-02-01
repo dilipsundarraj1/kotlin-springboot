@@ -12,10 +12,18 @@ spring:
     username: postgres
     password: postgres
   jpa:
-#    database: h2
-#    database-platform: org.hibernate.dialect.H2Dialect
+    #    database: h2
+    #    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop #this recreates the db, not recommended for prod
     show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
   h2:
     console:
       enabled: true
