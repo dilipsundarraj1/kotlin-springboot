@@ -90,20 +90,22 @@ dependencies {
 ```
 companion object {
 
-    @Container
-    private val postgresDB: PostgreSQLContainer<*> = PostgreSQLContainer("postgres:13.2")
-        .withDatabaseName("testdb")
-        .withUsername("postgres")
-        .withPassword("secret")
+  @Container
+  val postgresDB = PostgreSQLContainer<Nothing>(DockerImageName.parse("postgres:13-alpine")).apply {
+      withDatabaseName("testdb")
+      withUsername("postgres")
+      withPassword("secret")
+  }
 
-    @JvmStatic
-    @DynamicPropertySource
-    fun properties(registry: DynamicPropertyRegistry) {
-        registry.add("spring.datasource.url", postgresDB::getJdbcUrl)
-        registry.add("spring.datasource.username", postgresDB::getUsername)
-        registry.add("spring.datasource.password", postgresDB::getPassword)
-    }
+  @JvmStatic
+  @DynamicPropertySource
+  fun properties(registry: DynamicPropertyRegistry) {
+      registry.add("spring.datasource.url", postgresDB::getJdbcUrl)
+      registry.add("spring.datasource.username", postgresDB::getUsername)
+      registry.add("spring.datasource.password", postgresDB::getPassword)
+  }
 }
+
 ```
 
 #### 2.2 Configure TestContainers in @DataJPATest
