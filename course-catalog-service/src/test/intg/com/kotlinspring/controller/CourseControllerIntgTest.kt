@@ -44,7 +44,7 @@ internal class CourseControllerIntgTest {
     }
 
     @Test
-    fun addCourse() {
+    fun addInstructor() {
 
         val instructor = instructorRepository.findInstructorByName("Dilip Sundarraj")
 
