@@ -6,12 +6,12 @@ fun checkType(type: Any) {
 
     when (type) {
         is Course -> {
-            println("The type is Course")
-            //val course = type as Course // This is redundant
+            println("The type is CourseJava")
+            //val course = type as CourseJava // This is redundant
             println(type.copy())
         }
         is String -> {
-            println("The type is Course ")
+            println("The type is CourseJava ")
             println(type.lowercase())
         }
     }

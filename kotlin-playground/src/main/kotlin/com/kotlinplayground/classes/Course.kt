@@ -2,6 +2,8 @@
 
 package com.kotlinplayground.classes
 
+import com.kotlinplayground.CourseJava
+
 data class Course (
     val id: Int,
     val name: String,
@@ -23,6 +25,7 @@ data class Course (
     }
 
 }
+
 
 @JvmName("printName1")
 @JvmOverloads
@@ -47,8 +50,6 @@ enum class CourseCategory{
     MARKETING
 }
 
-
-
 fun main() {
 
     val course = Course(1, "Reactive Programming in Modern Java using Project Reactor", "Dilip")
@@ -62,5 +63,12 @@ fun main() {
 
     val  marketingCourse = Course(1, "FaceBook Marketing", "Dilip", CourseCategory.MARKETING)
     println("marketingCourse : $marketingCourse")
+
+    val courseJava = CourseJava(1, "Reactive Programming in Modern Java using Project Reactor", "Dilip")
+    courseJava.id = 1
+    courseJava.name = "ABC"
+    courseJava.author = "Dilip"
+
+    courseJava.printCourse()
 
 }
