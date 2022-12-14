@@ -81,13 +81,4 @@ sourceSets {
             setSrcDirs(listOf("src/test/intg",  "src/test/unit"))
         }
     }
-
-/*
-    test {
-        withConvention(KotlinSourceSet::class) {
-            kotlin.srcDir(listOf("src/test/intg", "src/test/unit"))
-        }
-    }
-*/
-
 }

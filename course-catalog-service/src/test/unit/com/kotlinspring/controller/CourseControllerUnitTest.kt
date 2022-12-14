@@ -19,7 +19,7 @@ import org.springframework.http.MediaType
 import org.springframework.test.web.reactive.server.WebTestClient
 
 @WebMvcTest(CourseController::class)
-@AutoConfigureWebTestClient(timeout = "6000000")
+@AutoConfigureWebTestClient
 class CourseControllerUnitTest {
 
     @Autowired

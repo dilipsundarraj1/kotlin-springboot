@@ -51,7 +51,7 @@ class GlobalErrorHandler : ResponseEntityExceptionHandler() {
 
     @ExceptionHandler(java.lang.Exception::class)
     fun handleAllExceptions(ex: java.lang.Exception, request: WebRequest): ResponseEntity<Any> {
-        logger.info("Exception occurred: ${ex.message} on request: $request")
+        logger.info("Exception occurred: ${ex.message} on request: $request", ex)
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
             .body(
                 ex.message
