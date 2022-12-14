@@ -27,8 +27,7 @@ val instructorService: InstructorService) {
 
         courseRepository.save(courseEntity)
 
-       logger.info("Saved Course is : $courseEntity")
-
+        logger.info("Saved Course is : $courseEntity")
         return courseEntity.let {
             //CourseDTO(it.id!!, it.name, it.category)
             CourseDTO(it.id, it.name, it.category,it.instructor?.id)
